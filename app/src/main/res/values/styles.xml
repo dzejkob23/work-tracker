@@ -1,0 +1,19 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Button" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="paddingStart">@dimen/screen_horizontal_padding</item>
+        <item name="paddingEnd">@dimen/screen_horizontal_padding</item>
+    </style>
+    <style name="Button.Primary" />
+    <style name="Button.Secondary" />
+    <style name="Button.Tertiary" />
+
+</resources>
