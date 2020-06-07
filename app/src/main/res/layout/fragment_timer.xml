@@ -5,8 +5,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/screen_padding"
     tools:context=".fragment.TimerFragment">
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_background_shape"
+        android:layout_marginTop="@dimen/size_16"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
     <ImageView
         android:id="@+id/timerImage"
@@ -21,10 +30,9 @@
 
     <TextView
         android:id="@+id/timeView"
+        style="@style/Text.Stopwatch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#C4C4C4"
-        android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="@+id/timerImage"
         app:layout_constraintEnd_toEndOf="@+id/timerImage"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -36,8 +44,11 @@
 
     <Button
         android:id="@+id/buttonStart"
-        style="@style/Button.Primary"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="wrap_content"
         android:text="@string/button_start"
+        android:layout_marginStart="@dimen/screen_horizontal_padding"
+        android:layout_marginEnd="@dimen/screen_horizontal_padding"
         app:layout_constraintTop_toBottomOf="@id/timerImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,8 +56,11 @@
 
     <Button
         android:id="@+id/buttonStop"
-        style="@style/Button.Primary"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="wrap_content"
         android:text="@string/button_stop"
+        android:layout_marginStart="@dimen/screen_horizontal_padding"
+        android:layout_marginEnd="@dimen/screen_horizontal_padding"
         app:layout_constraintTop_toBottomOf="@id/timerImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,8 +74,11 @@
 
     <Button
         android:id="@+id/buttonContinue"
-        style="@style/Button.Primary"
         android:text="@string/button_continue"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_horizontal_padding"
+        android:layout_marginEnd="@dimen/screen_horizontal_padding"
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintTop_toBottomOf="@id/timerImage"
         app:layout_constraintEnd_toEndOf="parent"
@@ -70,8 +87,12 @@
 
     <Button
         android:id="@+id/buttonRestart"
-        style="@style/Button.Primary"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="wrap_content"
         android:text="@string/button_restart"
+        android:layout_marginTop="@dimen/size_2"
+        android:layout_marginStart="@dimen/screen_horizontal_padding"
+        android:layout_marginEnd="@dimen/screen_horizontal_padding"
         app:layout_constraintTop_toBottomOf="@id/buttonContinue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,8 +100,12 @@
 
     <Button
         android:id="@+id/buttonSave"
-        style="@style/Button.Primary"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="wrap_content"
         android:text="@string/button_save"
+        android:layout_marginTop="@dimen/size_2"
+        android:layout_marginStart="@dimen/screen_horizontal_padding"
+        android:layout_marginEnd="@dimen/screen_horizontal_padding"
         app:layout_constraintTop_toBottomOf="@id/buttonRestart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

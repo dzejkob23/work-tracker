@@ -11,9 +11,14 @@
     <dimen name="size_7">28dp</dimen>
     <dimen name="size_8">32dp</dimen>
     <dimen name="size_9">36dp</dimen>
+    <dimen name="size_10">40dp</dimen>
+    <dimen name="size_16">64dp</dimen>
 
     <dimen name="screen_padding">@dimen/size_4</dimen>
     <dimen name="screen_horizontal_padding">@dimen/screen_padding</dimen>
     <dimen name="screen_vertical_padding">@dimen/screen_padding</dimen>
+
+    <dimen name="button_radius">@dimen/size_6</dimen>
+    <dimen name="button_min_vertical_padding">@dimen/size_2</dimen>
 
 </resources>
