@@ -3,12 +3,20 @@
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
     <color name="transparent">#FFFFFFFF</color>
+    <color name="error">#B00020</color>
 
-    <color name="colorPrimary">#FAE7E7</color>
-    <color name="colorPrimaryDark">#EFADAD</color>
-    <color name="colorAccent">#9FFFD7</color>
+    <color name="primary">#9fffd7</color>
+    <color name="primaryDark">#6ccba6</color>
+    <color name="primaryLight">#d3ffff</color>
+    <color name="secondaryText">@color/black</color>
 
-    <color name="colorText">@color/black</color>
+    <color name="secondary">#f7a399</color>
+    <color name="secondaryDark">#c2746b</color>
+    <color name="secondaryLight">#ffd5ca</color>
+    <color name="primaryText">@color/black</color>
+
     <color name="colorTextDisabled">#616161</color>
+
+    <color name="debug">#0F4249</color>
 
 </resources>

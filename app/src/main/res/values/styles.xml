@@ -1,22 +1,60 @@
 <resources>
 
     <style name="Theme.App" parent="Theme.MaterialComponents.DayNight">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorOnPrimary">@color/colorText</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorOnPrimary">@color/primaryText</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/secondaryText</item>
+        <item name="colorAccent">@color/primaryLight</item>
+
+        <item name="colorSurface">@color/white</item>
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/white</item>
+
+        <item name="colorControlNormal"></item>
+        <item name="colorControlHighlight"></item>
+        <item name="colorControlActivated"></item>
+
+        <!--    Buttons, Chips, Text Fields etc. Defaults to rounded 4dp corners.    -->
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.App.SmallComponent</item>
+
+        <!--    Cards, Dialogs, Date Pickers etc. Defaults to rounded 4dp corners.    -->
+<!--        <item name="shapeAppearanceMediumComponent"></item>-->
+
+        <!--    Bottom Sheets etc. Defaults to rounded 0dp corners (i.e. square!)    -->
+<!--        <item name="shapeAppearanceLargeComponent"></item>-->
+        
+        <item name="materialButtonStyle">@style/Theme.App.Button</item>
+<!--        <item name="borderlessButtonStyle"></item>-->
+<!--        <item name="materialButtonOutlinedStyle"></item>-->
+
+        <item name="android:colorBackground">@color/white</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="TextAppearance.App.Button" parent="TextAppearance.MaterialComponents.Button">
-<!--        <item name="fontFamily">@font/rubik</item>-->
-<!--        <item name="android:fontFamily">@font/rubik</item>-->
-    </style>
-    
+
+
+    <!--  Material Components  -->
+
     <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerFamily">cut</item>
         <item name="cornerSize">4dp</item>
-        <item name="backgroundTint">@color/colorAccent</item>
+    </style>
+
+    <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent" />
+
+    <style name="ShapeAppearance.App.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent" />
+
+    <!--  Material Button  -->
+
+    <!--    <style name="TextAppearance.App.Button" parent="TextAppearance.MaterialComponents.Button">-->
+    <!--        <item name="fontFamily">@font/rubik</item>-->
+    <!--        <item name="android:fontFamily">@font/rubik</item>-->
+    <!--    </style>-->
+
+    <style name="Theme.App.Button" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/secondaryLight</item>
     </style>
 
     <!--  Text styles  -->
@@ -24,7 +62,7 @@
     <style name="Text" parent="TextAppearance.AppCompat" />
     <style name="Text.Stopwatch">
         <item name="android:textSize">48sp</item>
-<!--        <item name="android:fontFamily">sans-serif-medium</item>-->
+        <item name="android:fontFamily">@font/roboto_mono_bold</item>
     </style>
 
 </resources>
