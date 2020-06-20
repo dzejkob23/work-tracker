@@ -12,9 +12,9 @@
         <item name="colorError">@color/error</item>
         <item name="colorOnError">@color/white</item>
 
-        <item name="colorControlNormal"></item>
-        <item name="colorControlHighlight"></item>
-        <item name="colorControlActivated"></item>
+<!--        <item name="colorControlNormal"></item>-->
+<!--        <item name="colorControlHighlight"></item>-->
+<!--        <item name="colorControlActivated"></item>-->
 
         <!--    Buttons, Chips, Text Fields etc. Defaults to rounded 4dp corners.    -->
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.App.SmallComponent</item>
@@ -30,7 +30,6 @@
 <!--        <item name="materialButtonOutlinedStyle"></item>-->
 
         <item name="android:colorBackground">@color/white</item>
-        <item name="windowNoTitle">true</item>
     </style>
 
 
