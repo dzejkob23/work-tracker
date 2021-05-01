@@ -114,12 +114,12 @@ jobs:
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: warn
 
-      - name: Assemble release apk
-        uses: ./.github/actions/assemble-release
-
-      - name: Save release apk
-        uses: actions/upload-artifact@v1
-        with:
-          name: app-release.apk
-          path: app/build/outputs/apk/release/app-release.apk
-          if-no-files-found: error
+#      - name: Assemble release apk
+#        uses: ./.github/actions/assemble-release
+#
+#      - name: Save release apk
+#        uses: actions/upload-artifact@v1
+#        with:
+#          name: app-release.apk
+#          path: app/build/outputs/apk/release/app-release.apk
+#          if-no-files-found: error
