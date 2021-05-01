@@ -1,0 +1,7 @@
+name: 'Clean project before build'
+description: ''
+runs:
+  using: "composite"
+  steps:
+    - run: ./gradlew clean
+      shell: bash

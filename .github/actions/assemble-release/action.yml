@@ -1,0 +1,7 @@
+name: 'Assemble Release APK'
+description: ''
+runs:
+  using: "composite"
+  steps:
+    - run: ./gradlew --stacktrace -warn assembleRelease
+      shell: bash

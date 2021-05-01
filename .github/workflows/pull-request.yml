@@ -1,0 +1,125 @@
+name: 'Pull request'
+
+on:
+
+  # Run workflow after pull-request
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+
+  # Run lint
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: Install NDK
+        uses: ./.github/actions/ndk
+        with:
+          android-sdk-root: ${ANDROID_SDK_ROOT}
+
+      - name: Download dependencies
+        uses: ./.github/actions/dependencies
+
+      - name: Run lint check
+        uses: ./.github/actions/lint
+
+      - name: Save debug lint reports
+        uses: actions/upload-artifact@v1
+        with:
+          name: lint-results-debug.html
+          path: app/build/reports/lint-results-debug.html
+
+      - name: Save release lint reports
+        uses: actions/upload-artifact@v2
+        with:
+          name: lint-results-release.html
+          path: app/build/reports/lint-results-release.html
+          if-no-files-found: warn
+
+  # Run tests
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: Install NDK
+        uses: ./.github/actions/ndk
+        with:
+          android-sdk-root: ${ANDROID_SDK_ROOT}
+
+      - name: Download dependencies
+        uses: ./.github/actions/dependencies
+
+      - name: Run tests
+        uses: ./.github/actions/test-unit
+
+      - name: Save tests report
+        uses: actions/upload-artifact@v2
+        with:
+          name: unitTestResults
+          path: app/build/reports
+          if-no-files-found: warn
+
+  # Assemble "debug" & "release" apk
+  assemble:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: Install NDK
+        uses: ./.github/actions/ndk
+        with:
+          android-sdk-root: ${ANDROID_SDK_ROOT}
+
+      - name: Download dependencies
+        uses: ./.github/actions/dependencies
+
+      - name: Assemble debug apk
+        uses: ./.github/actions/assemble-debug
+
+      - name: Save debug apk
+        uses: actions/upload-artifact@v2
+        with:
+          name: app-debug.apk
+          path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: warn
+
+#      - name: Assemble release apk
+#        uses: ./.github/actions/assemble-release
+#
+#      - name: Save release apk
+#        uses: actions/upload-artifact@v1
+#        with:
+#          name: app-release.apk
+#          path: app/build/outputs/apk/release/app-release.apk
+#          if-no-files-found: error
