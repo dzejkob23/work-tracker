@@ -1,4 +1,4 @@
-name: 'PR[*] or push[master, dev]'
+name: 'Pull request'
 
 on:
 
