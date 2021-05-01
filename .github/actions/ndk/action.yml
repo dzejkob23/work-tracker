@@ -1,0 +1,11 @@
+name: 'Install NDK'
+description: 'Gradle has an error inside. When gradle builds needs info about NDK version.'
+inputs:
+  android-sdk-root:
+    description: 'Android SDK root path'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - run: echo "y" | sudo /usr/local/lib/android/sdk/tools/bin/sdkmanager --install "ndk;21.0.6113669" --sdk_root=${{ inputs.android-sdk-root }}
+      shell: bash

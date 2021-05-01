@@ -1,0 +1,10 @@
+name: 'Run Unit Tests'
+description: ''
+runs:
+  using: "composite"
+  steps:
+    - run: ./gradlew testDebugUnitTest
+      shell: bash
+
+    - run: ./gradlew testReleaseUnitTest
+      shell: bash

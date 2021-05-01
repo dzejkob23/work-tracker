@@ -1,0 +1,13 @@
+name: 'Lint Check'
+description: 'Run lint check on debug and release app versions'
+runs:
+  using: "composite"
+  steps:
+    - run: ./gradlew --stacktrace -warn lintDebug
+      shell: bash
+
+    - run: ./gradlew --stacktrace -warn lintRelease
+      shell: bash
+
+    - run: ./gradlew --stacktrace -warn lintRelease
+      shell: bash

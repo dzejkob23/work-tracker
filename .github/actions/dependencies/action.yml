@@ -1,0 +1,7 @@
+name: 'Download Dependencies'
+description: ''
+runs:
+  using: "composite"
+  steps:
+    - run: ./gradlew --stacktrace -warn androidDependencies
+      shell: bash
