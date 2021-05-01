@@ -29,9 +29,6 @@ jobs:
         with:
           android-sdk-root: ${ANDROID_SDK_ROOT}
 
-      - name: Build OpenCV
-        uses: ./.github/actions/opencv
-
       - name: Download dependencies
         uses: ./.github/actions/dependencies
 
@@ -70,9 +67,6 @@ jobs:
         with:
           android-sdk-root: ${ANDROID_SDK_ROOT}
 
-      - name: Build OpenCV
-        uses: ./.github/actions/opencv
-
       - name: Download dependencies
         uses: ./.github/actions/dependencies
 
@@ -104,9 +98,6 @@ jobs:
         uses: ./.github/actions/ndk
         with:
           android-sdk-root: ${ANDROID_SDK_ROOT}
-
-      - name: Build OpenCV
-        uses: ./.github/actions/opencv
 
       - name: Download dependencies
         uses: ./.github/actions/dependencies
