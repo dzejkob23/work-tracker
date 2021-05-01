@@ -1,0 +1,50 @@
+name: 'Firebase Apk Distribution'
+
+on:
+  workflow_dispatch:
+    inputs:
+
+      # Release notes
+      release-notes:
+        description: "Fill release notes here:"
+        required: false
+
+  # Run workflow after push to master
+  push:
+    branches:
+      - master
+
+jobs:
+
+  distribute-apk:
+    name: Upload APK to Firebase Distribution
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: Install NDK
+        uses: ./.github/actions/ndk
+        with:
+          android-sdk-root: ${ANDROID_SDK_ROOT}
+
+      - name: Download dependencies
+        uses: ./.github/actions/dependencies
+
+      - name: Create Debug APK
+        uses: ./.github/actions/assemble-debug
+
+      - name: Distribute Debug APK on Firebase
+        run: ./gradlew appDistributionUploadDebug
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          RELEASE_NOTES: ${{ github.event.inputs.release-notes }}
