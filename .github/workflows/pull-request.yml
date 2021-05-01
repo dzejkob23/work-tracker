@@ -42,10 +42,11 @@ jobs:
           path: app/build/reports/lint-results-debug.html
 
       - name: Save release lint reports
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: lint-results-release.html
           path: app/build/reports/lint-results-release.html
+          if-no-files-found: warn
 
   # Run tests
   tests:
@@ -74,10 +75,11 @@ jobs:
         uses: ./.github/actions/test-unit
 
       - name: Save tests report
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: unitTestResults
           path: app/build/reports
+          if-no-files-found: warn
 
   # Assemble "debug" & "release" apk
   assemble:
@@ -106,11 +108,11 @@ jobs:
         uses: ./.github/actions/assemble-debug
 
       - name: Save debug apk
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: app-debug.apk
           path: app/build/outputs/apk/debug/app-debug.apk
-          if-no-files-found: ['name', 'path']
+          if-no-files-found: warn
 
 #      - name: Assemble release apk
 #        uses: ./.github/actions/assemble-release
