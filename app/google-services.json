@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "600473382966",
+    "project_id": "worktracker-b1841",
+    "storage_bucket": "worktracker-b1841.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600473382966:android:6d11655fe39a7187112897",
+        "android_client_info": {
+          "package_name": "dev.jakubzika.worktracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "600473382966-mqmdcoqbon4d13n54n5do6uu3nck4q3h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9kVAXRbW6QAyEfkZQc2a65WVu5MZnN7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "600473382966-mqmdcoqbon4d13n54n5do6uu3nck4q3h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
