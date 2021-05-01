@@ -6,7 +6,7 @@ import org.koin.dsl.module
 
 // Koin module for persistence
 
-const val PREFERENCES_FILE_KEY = "cz.twisto.app.SHARED_PREFS"
+const val PREFERENCES_FILE_KEY = "dev.jakubzika.worktracker.app.SHARED_PREFS"
 
 val persistenceModule = module {
 
